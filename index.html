@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beatbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="brand"> <img src="bird.jpeg" alt="Loading"></img> REED COLLEGE </li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li id="whyReed">Why Reed?</li> 
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="video-wrapper">
+            <video class="Beatbox" id="myVideo" >
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" max="100">
+        <div class="icons">
+            <i class="fa-solid fa-backward-step" id="backwardButton"></i>
+            <i class="fa-regular fa-circle-play" id="playPauseButton"></i>
+            <i class="fa-solid fa-forward-step" id="forwardButton"></i>   
+        </div>
+        <div class="songInfo">
+            <img src="playing.gif" id="playingGif" width="45px" alt="It is playing">
+            Nishant's Beatbox
+        </div>
+         <span>Made by Nishant Ghimire</span> 
+    </div>
+
+    <!-- I was facing problem with JS so copied here -->
+    <script>
+        let video = document.getElementById("myVideo");
+        let playPauseButton = document.getElementById("playPauseButton");
+        let backwardButton = document.getElementById("backwardButton");
+        let forwardButton = document.getElementById("forwardButton");
+        let progressBar = document.getElementById("myProgressBar");
+        let playingGif = document.getElementById("playingGif");
+        let whyReedItem = document.getElementById("whyReed");
+        window.onload = function() {
+    alert("Welcome to my website! This is a responsive website.Still, Google is Prefered");
+};
+
+whyReedItem.addEventListener("click", function() {
+    window.open("essay.html", "_blank");
+});
+
+        playPauseButton.addEventListener("click", function() {
+            if (video.paused) {
+                video.play();
+                playPauseButton.classList.remove("fa-circle-play");
+                playPauseButton.classList.add("fa-pause-circle");
+            } else {
+                video.pause();
+                playPauseButton.classList.remove("fa-pause-circle");
+                playPauseButton.classList.add("fa-circle-play");
+            }
+        });
+        
+        backwardButton.addEventListener("click", function() {
+            video.currentTime -= 10; 
+        });
+        
+        forwardButton.addEventListener("click", function() {
+            video.currentTime += 10; 
+        });
+        
+        video.addEventListener("timeupdate", function() {
+            let currentTime = video.currentTime;
+            let duration = video.duration;
+            let progress = (currentTime / duration) * 100;
+            progressBar.value = progress;
+        });
+        
+        progressBar.addEventListener("input", function() {
+            let value = progressBar.value;
+            let duration = video.duration;
+            let time = (value / 100) * duration;
+            video.currentTime = time;
+        });
+    
+        playingGif.style.opacity = 0;
+    
+        
+        video.addEventListener("play", function() {
+            playingGif.style.opacity = 1;
+        });
+
+        video.addEventListener("pause", function() {
+            playingGif.style.opacity = 0;
+        });
+video.addEventListener("ended", function() {
+    alert("Thank you for watching! Click 'Why Reed?' to learn more.");
+});
+
+    </script>
+    <script src="https://kit.fontawesome.com/73166b7a64.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

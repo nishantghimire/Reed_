@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&family=Varela+Round&family=EB+Garamond:wght@500&family=Jacquard+24&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: antiquewhite;
+}
+.brand img{
+    width: 70px;
+    height: auto; 
+    padding: 0 8px;
+    filter: grayscale(100%) invert(200%);
+}
+nav{
+    font-family: sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+}
+nav ul{
+    display: flex; 
+    align-items: center;
+    list-style: none;
+    background-color:darkred;
+    color: white;
+    height: 80px;
+}
+nav ul li{
+    padding: 0 14px;
+}
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 35px;
+    font-family: 'Garamond', sans-serif;
+}
+#whyReed {
+    cursor: pointer;
+        margin-left: auto;
+        position: relative;
+}
+#whyReed::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease; 
+}
+
+#whyReed:hover::after {
+    width: 80%; 
+    margin-left: 10px;
+}
+.container{
+    height: 80vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    width: 62%;
+    margin: 10px auto;
+    border-radius: 13px;
+   /* background-image: url('artist.jpeg'); */
+    background-repeat: no-repeat;
+    background-position: right;
+}
+video {
+    border-radius: 16%;
+    width: 100%;
+    height: 100%;
+}
+#myProgressBar{
+    width: 60%;
+    cursor: pointer;
+}
+.bottom{
+    position: relative;
+    height: 80px;
+    background-color: darkred;
+    color: white;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.video-wrapper {
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-wrapper video.Beatbox {
+    transform: rotate(-90deg);
+    transform-origin: center; 
+    height: 60vh; 
+    width: 1000vw; 
+}
+.essay-content{
+    max-width: 60%;
+    margin-top: 2%;
+    margin-left: 17%;
+    font-family: 'Varela Round', sans-serif;
+}
+.essay{
+    height: auto;
+}
+.essay-content p{
+margin-bottom: 20px;
+}
+.icons{
+    font-size: 26px;
+    margin-top: 10px;
+}
+.icons i{
+    cursor: pointer;
+}
+.songInfo{
+    position: absolute;
+    left: 20vw;
+    font-family: 'Varela Round', sans-serif;
+}
+.songInfo img{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+.design{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; 
+    background-color: darkred;
+}
+@media screen and (min-width: 600px) {
+    /* For Medium */
+    .container {
+        max-width: 600px; 
+    }
+}
+
+@media screen and (min-width: 900px) {
+    /* For little Larger */
+    .container {
+        max-width: 900px; 
+    }
+}
