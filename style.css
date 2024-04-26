@@ -15,7 +15,6 @@ body{
 }
 nav{
     font-family: sans-serif;
-    /* font-family: 'Ubuntu', sans-serif; */
 }
 nav ul{
     display: flex; 
@@ -63,7 +62,6 @@ nav ul li{
     width: 62%;
     margin: 10px auto;
     border-radius: 13px;
-   /* background-image: url('artist.jpeg'); */
     background-repeat: no-repeat;
     background-position: right;
 }
