@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&family=Varela+Round&family=EB+Garamond:wght@500&family=Jacquard+24&display=swap');
-
 *{
     margin: 0px;
     padding: 0px;
@@ -26,20 +25,13 @@ nav ul{
 }
 nav ul li{
     padding: 0 14px;
+    
 }
-.brand{
-    display: flex;
-    align-items: center;
-    font-weight: bolder;
-    font-size: 35px;
-    font-family: 'Garamond', sans-serif;
-}
-#whyReed {
+nav ul .nav-item {
     cursor: pointer;
-        margin-left: auto;
-        position: relative;
+    position: relative;
 }
-#whyReed::after {
+nav ul .nav-item::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -49,10 +41,24 @@ nav ul li{
     background-color: white;
     transition: width 0.3s ease; 
 }
-
-#whyReed:hover::after {
+nav ul .nav-item:hover::after {
     width: 80%; 
     margin-left: 10px;
+}
+.nav-item a {
+    color: white; 
+    text-decoration: none; 
+}
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 35px;
+    font-family: 'Garamond', sans-serif;
+}
+#whyReed {
+        margin-left: auto;
+        position: relative;
 }
 .container{
     height: 80vh;
@@ -111,6 +117,12 @@ video {
 .essay-content p{
 margin-bottom: 20px;
 }
+.achievements{
+    max-width: 60%;
+    margin-top: 2%;
+    margin-left: 17%;
+    font-family: 'Varela Round', sans-serif;
+}
 .icons{
     font-size: 26px;
     margin-top: 10px;
@@ -136,14 +148,12 @@ margin-bottom: 20px;
     background-color: darkred;
 }
 @media screen and (min-width: 600px) {
-    /* For Medium */
     .container {
         max-width: 600px; 
     }
 }
 
 @media screen and (min-width: 900px) {
-    /* For little Larger */
     .container {
         max-width: 900px; 
     }
