@@ -87,7 +87,7 @@ displayAlert();
 });
 
 function displayAlert() {
-alert("Thank you for watching! Click on the navigation items such as Activities and 'Why Reed?' to learn more.");
+alert("Thank you for watching! Click on the navigation items such as Achievements, About me  and 'Why Reed?' to learn more.");
 localStorage.setItem('lastVisit', currentTime);
 }
 };
