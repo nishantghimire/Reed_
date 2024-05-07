@@ -1,7 +1,7 @@
 let video = document.getElementById("myVideo");
 let playPauseButton = document.getElementById("playPauseButton");
 let backwardButton = document.getElementById("backwardButton");
-let forwardButton = document.getElementById("forwardButton");
+let forwardButton = document.getElementById ("forwardButton");
 let progressBar = document.getElementById("myProgressBar");
 let playingGif = document.getElementById("playingGif");
 let whyReedItem = document.getElementById("whyReed");
@@ -9,24 +9,30 @@ let extracurricular = document.getElementById("activities");
 let about = document.getElementById("about");
 
 window.onload = function() {
-let lastVisit = localStorage.getItem('lastVisit');
-let currentTime = new Date().getTime();
-let oneHour = 60 * 60 * 1000; 
+    let lastVisit = localStorage.getItem('lastVisit');
+    let currentTime = new Date().getTime();
+    let oneHour = 60 * 60 * 1000;
 
-if (!lastVisit || (currentTime - lastVisit) >= oneHour) {
-alert("Welcome to my website! This is a responsive website. Still, Google is preferred.");
-localStorage.setItem('lastVisit', currentTime);
-}
+    if (!lastVisit || (currentTime - lastVisit) >= oneHour) {
+        displayWelcomeAlert();
+        localStorage.setItem('lastVisit', currentTime);
+    }
 };
 
+function displayWelcomeAlert() {
+    alert("Welcome to my website! While this site is responsive, it's best experienced on larger devices like PCs");
+}
+
 whyReedItem.addEventListener("click", function() {
-window.open("essay.html", "_blank");
+    window.open("essay.html", "_blank");
 });
+
 extracurricular.addEventListener("click", function() {
-window.location.href = "activities.html";
+    window.location.href = "activities.html";
 });
+
 about.addEventListener("click", function() {
-window.location.href = "about.html";
+    window.location.href = "about.html";
 });
 
 playPauseButton.addEventListener("click", function() {
@@ -65,7 +71,6 @@ progressBar.addEventListener("input", function() {
 
 playingGif.style.opacity = 0;
 
-
 video.addEventListener("play", function() {
     playingGif.style.opacity = 1;
 });
@@ -73,21 +78,11 @@ video.addEventListener("play", function() {
 video.addEventListener("pause", function() {
     playingGif.style.opacity = 0;
 });
-window.onload = function() {
-let lastVisit = localStorage.getItem('lastVisit');
-let currentTime = new Date().getTime();
-let oneHour = 60 * 60 * 1000; 
-
-if (!lastVisit || (currentTime - lastVisit) >= oneHour) {
-displayAlert();
-}
 
 video.addEventListener("ended", function() {
-displayAlert();
+    displayVideoEndAlert();
 });
 
-function displayAlert() {
-alert("Thank you for watching! Click on the navigation items such as Achievements, About me  and 'Why Reed?' to learn more.");
-localStorage.setItem('lastVisit', currentTime);
+function displayVideoEndAlert() {
+    alert("Thank you for watching! Click on the navigation items such as Achievements, About me, and 'Why Reed?' to learn more.");
 }
-};
