@@ -56,10 +56,6 @@ nav ul .nav-item:hover::after {
     font-size: 35px;
     font-family: 'Garamond', sans-serif;
 }
-#whyReed {
-        margin-left: auto;
-        position: relative;
-}
 .container{
     height: 80vh;
     background-color: black;
