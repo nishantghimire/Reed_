@@ -112,10 +112,19 @@ video {
     font-family: 'Varela Round', sans-serif;
 }
 .essay{
-    height: auto;
+    height: 60px;
 }
 .essay-content p{
 margin-bottom: 20px;
+}
+.essay-contents{
+    max-width: 77%;
+    margin-top: 2%;
+    margin-left: 10%;
+    font-family: 'Varela Round', sans-serif;
+}
+.essay-contents p{
+margin-bottom: 9px;
 }
 .achievements{
     max-width: 60%;
