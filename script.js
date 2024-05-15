@@ -20,7 +20,7 @@ window.onload = function() {
 };
 
 function displayWelcomeAlert() {
-    alert("Welcome to my website! While this site is responsive, it's best experienced on larger devices like PCs");
+    alert("Welcome to my website! While this site is responsive, it's best experienced on larger devices like PCs. Please be aware that some scrolling might be required to access buttons.");
 }
 
 whyReedItem.addEventListener("click", function() {
@@ -84,5 +84,5 @@ video.addEventListener("ended", function() {
 });
 
 function displayVideoEndAlert() {
-    alert("Thank you for watching! Click on the navigation items such as Achievements, About me, and 'Why Reed?' to learn more.");
+    alert("Thank you for watching! Click on the navigation items such as Achievements, 'Why Reed?', and About me to learn more.");
 }
