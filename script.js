@@ -86,6 +86,7 @@
 // function displayVideoEndAlert() {
 //     alert("Thank you for watching! Click on the navigation items such as Achievements, 'Why Reed?', and About me to learn more.");
 // }
+
 document.addEventListener('DOMContentLoaded', function() {
     let video = document.getElementById("myVideo");
     let playPauseButton = document.getElementById("playPauseButton");
@@ -116,6 +117,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Play/Pause button functionality
     playPauseButton.addEventListener("click", function() {
+        togglePlayPause();
+    });
+
+    // Add click listener on the video itself to toggle play/pause
+    video.addEventListener("click", function() {
+        togglePlayPause();
+    });
+
+    // Function to toggle play/pause
+    function togglePlayPause() {
         if (video.paused) {
             video.play();
             playPauseButton.classList.remove("fa-circle-play");
@@ -125,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
             playPauseButton.classList.remove("fa-pause-circle");
             playPauseButton.classList.add("fa-circle-play");
         }
-    });
+    }
 
     // Rewind video by 10 seconds when backward button is clicked
     backwardButton.addEventListener("click", function() {
@@ -166,10 +177,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Alert when the video ends
     video.addEventListener("ended", function() {
-        displayVideoEndAlert();
+        setTimeout(function() {
+            displayVideoEndAlert();
+        }, 1000);
     });
 
     function displayVideoEndAlert() {
-        alert("Thank you for watching! Do click on About Me.");
+        alert("Thank you for watching! To learn more about me please click on 'About Me'.");
     }
+
 });
+
+
